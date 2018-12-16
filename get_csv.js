@@ -4,11 +4,8 @@ const shuffler = require('shuffle-seed');
 
 reVokeColumn = (data, colName) => {
   const headers = _.first(data);
-  //   console.log(headers);
   const indexes = _.map(colName, column => headers.indexOf(column));
-  //   console.log('indexes', indexes);
   const getter = _.map(data, row => _.pullAt(row, indexes));
-  //   console.log('getter', getter);
   return getter;
 };
 
